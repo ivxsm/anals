@@ -1,0 +1,40 @@
+# macOS system files
+.DS_Store
+
+# Xcode build files
+DerivedData/
+build/
+
+# Xcode user-specific settings
+xcuserdata/
+
+# Xcode project/workspace files
+*.xcworkspace
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/xcshareddata/
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+.swiftpm/xcode/package.xcworkspace
+.swiftpm/xcode/xcuserdata
+
+# CocoaPods (if applicable)
+Pods/
+Podfile.lock
+
+# Carthage (if applicable)
+Carthage/Build/
+
+# Fastlane (if using Fastlane for CI/CD)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Ignore temporary files
+*.tmp
+*.swp
+
