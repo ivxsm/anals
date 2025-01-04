@@ -5,8 +5,6 @@ struct PlaceCardView: View {
 
     var body: some View {
         ZStack {
-
-            
             HStack {
                 if let firstImage = place.images?.first, let url = URL(string: firstImage) {
                     AsyncImage(url: url) { image in
@@ -22,15 +20,12 @@ struct PlaceCardView: View {
                     }
                 }
 
-                
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading, spacing: 10) {
                         Text(place.name ?? "Unknown Place")
                             .font(.ericaOne(size: 12))
                             .foregroundColor(.black)
-//                            .fixedSize()
                             .lineLimit(2)
-                        
 
                         Text(place.visitTime ?? "Always Open")
                             .font(.ericaOne(size: 12))
@@ -66,21 +61,21 @@ struct PlaceCardView: View {
     }
 
     private func priceSuffix(for place: PlaceModel) -> String {
+        // Define constants for reused literals
+        let bookingSuffix = " /booking"
+        let nightSuffix = " /night"
+
         switch place.type {
-        case .restaurant:
-            return " /booking"
+        case .restaurant, .museum, .entertainment:
+            return bookingSuffix
         case .hotel:
-            return " /night"
-        case .museum:
-            return " /booking"
-        case .entertainment:
-            return " /booking"
-         default: return ""
+            return nightSuffix
+        default:
+            return ""
         }
-        
     }
 }
 
 #Preview {
-HomeView()
+    HomeView()
 }
